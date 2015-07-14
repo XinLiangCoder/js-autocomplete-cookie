@@ -32,4 +32,6 @@
 
 下载后，即可预览，欢迎大家使用。
 
+自动补全：http://bigui4.sinaapp.com/autocomplete/demo.html
+
 
