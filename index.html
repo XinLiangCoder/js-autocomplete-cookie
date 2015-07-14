@@ -1,0 +1,85 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>输入框自动补全,将搜索数据缓存到本地</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/jquery.bigautocomplete.css">
+        <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.bigautocomplete.js"></script>
+        <script type="text/javascript" src="js/json2.js"></script>
+    </head>
+    <body>
+    <div class="container">
+        <h2>输入框自动补全 + 记录搜索缓存</h2>
+        <input type="text" placeholder="搜一搜" id="search-input" style="width:200px;margin-bottom: 10px;"/>
+        <div class="jumbotron">
+        <p>
+            输入框自动补全功能并实现与PHP交互，点击选中行后记录当前数据到本地cookie，同时可以跳转页面。
+        </p>
+        <p>
+            功能点：
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 输入框输入数值之后自动取服务端数据。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 当输入框为空的时候 显示 缓存数据。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 缓存数据最多显示 5 个，超过则显示滚动条。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 点击同一行，不会再次记录到cookie 。
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 清除cookie 。&nbsp;
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 其他细节 比如js对象的使用。
+        </p>
+        <p>
+            重要JS文件：
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jquery.bigautocomplete.js
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; jquery.cookie.js
+        </p>
+        <p>
+            测试数据：（输入框中输入）
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;a
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;b
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;其他
+        </p>
+        <p>
+            下载后，即可预览，欢迎大家使用。
+        </p>
+        <p>
+            <br />
+        </p>
+        </div>
+    </div>
+    </body>
+</html>
+<script>
+    $(function(){
+        /*自动补全*/
+        var url = "get.php";
+        $("#search-input").bigAutocomplete({url:url});
+    });
+</script>
+
